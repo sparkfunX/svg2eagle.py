@@ -46,6 +46,17 @@ optional arguments:
   
   Keep in mind that svgtoeagle will sample all curves in the file with the same resolution. If your file has multiple elements in it with very different sizes and "densities" then you may consider splitting them into separate svg files and then importing them with optimal subsampling (-u) factors for each. 
   
+  ### How to use Inkscape to 'fix' an SVG file
+  
+  [Inkscape](https://inkscape.org/) is a free, open-source vector graphics program for all platforms that does a good job of creating SVG files that svgtoeagle.py likes. Here are the steps that I've found give satisfactory results:
+  
+  #### Step 1: Open your SVG File in Inkscape
+  #### Step 2: Select All (Ctrl+A) and Ungroup (Ctrl+U) and Repeat until all groups are gone
+  #### Step 3: Select All (Ctrl+A) and Convert Object to Path (Shift+Ctrl+C)
+  #### Step 4: Save As Optimized SVG and select the "Collapse Groups" option before saving
+ 
+ These steps are usually enough to convert an unfriendly SVG.
+  
   ## SCALEFACTOR
   
   This argument controls the output size of the image. By default, SVG files that contain size information will convert 1:1
@@ -56,7 +67,7 @@ optional arguments:
 
   ## Verbose Mode
   
-  If something gets borked, try running again with `-v` to see what's happening under the hood
+  If something gets borked, try running again with `-v` to see what's happening under the hood. If a job seems like it's taking too long, abort and then run in verbose mode to see if it's actually stuck or just very very long. Verbose mode is the closest that svgtoeagle.py has to a heartbeat. 
   
   ## Output Mode
   
