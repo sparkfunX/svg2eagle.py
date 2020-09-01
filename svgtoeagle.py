@@ -218,7 +218,9 @@ def drawSVG(svg_attributes, attributes, paths):
         svgWidth = svg_attributes['width']
         svgHeight = svg_attributes['height']
 
-    specifiedWidth = svg_attributes['width']
+    specifiedWidth = svg_attributes.get('width')
+    if specifiedWidth == None:
+        specifiedWidth = "None"
     if 'mm' in specifiedWidth:
         specifiedWidth = float(specifiedWidth.replace('mm', ''))
         SCALE = specifiedWidth / float(svgWidth)
@@ -698,7 +700,7 @@ def simplify(points, tolerance, highestQuality):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
-        description='SparkFun Buzzard Label Generator')
+        description='SVGtoEAGLE Python Edition')
 
     parser.add_argument('imagePath', help='Path to SVG image')
 
