@@ -1,5 +1,5 @@
 # svg2eagle.py
-Python Port of Gordon Williams' "svg2eagle" Converter
+Python Port of Gordon Williams' [svg2eagle](https://github.com/gfwilliams/svgtoeagle) Converter
 
 ![sample_in](https://github.com/sparkfunX/svg2eagle.py/raw/master/sample_in.PNG)![sample_out](https://github.com/sparkfunX/svg2eagle.py/raw/master/sample_out.PNG)
 
