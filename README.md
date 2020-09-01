@@ -42,6 +42,10 @@ optional arguments:
   
   Unlike the original svgtoeagle, which runs in a web browser, svgtoeagle.py never renders the input svg file. This means, unfortunately, that certain types of transforms get ignored. Technically, svgtoeagle.py will happily parse groups so long as there are no *group transforms*. The best way to avoid group transforms is simply to ungroup all curves in your SVG file. If a group is detected in your input file, svgtoeagle.py will still attempt to import the file but will also warn you that groups are present.
   
+  ### Fill and Stroke
+  
+  Only curves and polygons with fill or stroke parameters will be translated. After removing groups, some SVG files will lack fill or stroke color. If there are elements missing from your image, open it in Inkscpae and check that these parameters are not "Unset"  
+  
   ### Consider breaking up into smaller files
   
   Keep in mind that svgtoeagle will sample all curves in the file with the same resolution. If your file has multiple elements in it with very different sizes and "densities" then you may consider splitting them into separate svg files and then importing them with optimal subsampling (-u) factors for each. 
@@ -53,7 +57,8 @@ optional arguments:
   #### Step 1: Open your SVG File in Inkscape
   #### Step 2: Select All (Ctrl+A) and Ungroup (Ctrl+U) and Repeat until all groups are gone
   #### Step 3: Select All (Ctrl+A) and Convert Object to Path (Shift+Ctrl+C)
-  #### Step 4: Save As Optimized SVG and select the "Collapse Groups" option before saving
+  #### Step 4: Check Stroke and Fill (Shift+Ctrl+F) properties. Add stroke or fill to elements with "Unset" property
+  #### Step 5: Save As Optimized SVG and select the "Collapse Groups" option before saving
  
  These steps are usually enough to convert an unfriendly SVG.
   
